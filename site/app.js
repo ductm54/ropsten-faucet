@@ -33,7 +33,7 @@ function getBalance(address) {
 
 function getUserInfo() {
   $.ajax({
-    url: "https://faucet-backend.kyber.network/user-info",
+    url: "https://faucet.kyber.network/user-info",
     type: "GET",
     success: function (response) {
       console.log(response)
@@ -63,7 +63,7 @@ function getUserInfo() {
 function submitAddress(address) {
   console.log(address)
   $.ajax({
-    url: "https://faucet-backend.kyber.network/claim-eth",
+    url: "https://faucet.kyber.network/claim-eth",
     type: "POST",
     data: { address: address },
     success: function (response) {
