@@ -47,9 +47,7 @@ func NewRamStorageFromFile() *RamStorage {
 		return NewRamStorage()
 	} else {
 		fmt.Printf("Loaded database from %s\n", FILE)
-		storage := &RamStorage{
-			mu: sync.RWMutex{},
-		}
+		storage := NewRamStorage()
 		json.Unmarshal(content, &storage)
 		return storage
 	}
