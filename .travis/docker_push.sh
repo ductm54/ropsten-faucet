@@ -12,8 +12,11 @@ fi
 echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
 docker tag kybernetwork/ropsten-faucet:"$TRAVIS_COMMIT" kybernetwork/ropsten-faucet:"$TRAVIS_BRANCH"
+docker tag kybernetwork/ropsten-faucet-site:"$TRAVIS_COMMIT" kybernetwork/ropsten-faucet-site:"$TRAVIS_BRANCH"
 if [[ -n "$TRAVIS_TAG" ]]; then
     docker tag kybernetwork/ropsten-faucet:"$TRAVIS_COMMIT" kybernetwork/ropsten-faucet:"$TRAVIS_TAG"
+    docker tag kybernetwork/ropsten-faucet-site:"$TRAVIS_COMMIT" kybernetwork/ropsten-faucet-site:"$TRAVIS_TAG"
 fi
 
 docker push kybernetwork/ropsten-faucet
+docker push kybernetwork/ropsten-faucet-site
