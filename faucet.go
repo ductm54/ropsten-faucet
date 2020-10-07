@@ -84,7 +84,7 @@ func NewFaucetApp() *FaucetApp {
 	}
 	exPath := filepath.Dir(ex)
 	fileSigner := signer.NewFileSigner(exPath + "/config.json")
-	client, err := rpc.Dial("https://ropsten-parity.knstats.com")
+	client, err := rpc.Dial("https://ethereum.knstats.com/v1/ropsten/node")
 	if err != nil {
 		panic(err)
 	}
